@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juego de Tronos — Página Principal</title>
+
+  <!-- Fuente con aire épico (opcional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS global y por secciones -->
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+</head>
+
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" aria-label="Inicio">
+  <img class="brand-mark" src="../imgs/icon.png" alt="" />
+</a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a class="nav-link is-active" href="./index.html">Principal</a>
+        <a class="nav-link" href="./personajes.html">Personajes</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ================= CONTENIDO ================= -->
+  <main class="site-main">
+    <!-- Hero con imagen tipo póster -->
+    
+
+    <!-- Miembros del equipo (mock de tu diseño) -->
+    <section class="container section">
+      <h2 class="section-title">
+        Miembros del Equipo # <span class="accent">"UBICAR EL NÚMERO DE GRUPO"</span>
+      </h2>
+
+      <div class="team-grid">
+        <!-- Duplica este bloque por integrante -->
+        <article class="member-card">
+          <figure class="member-media">
+            <img src="./assets/placeholder-student.jpg" alt="Imagen del estudiante" class="member-photo" />
+          </figure>
+          <div class="member-body">
+            <h3 class="member-name">NOMBRE DEL ESTUDIANTE</h3>
+            <dl class="member-data">
+              <div class="data-row">
+                <dt>CARRERA</dt>
+                <dd>—</dd>
+              </div>
+              <div class="data-row">
+                <dt>NIVEL</dt>
+                <dd>—</dd>
+              </div>
+              <div class="data-row">
+                <dt>CORREO</dt>
+                <dd>—</dd>
+              </div>
+              <div class="data-row">
+                <dt>PARALELO</dt>
+                <dd>—</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+        <!-- …más .member-card -->
+      </div>
+
+      <p class="page-note">UBICAR A TODOS LOS INTEGRANTES DEL EQUIPO</p>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Proyecto académico. Inspirado en HBO® “Game of Thrones”.</small>
+      <small class="muted">API: <a href="https://thronesapi.com/" target="_blank"
+          rel="noreferrer">thronesapi.com</a></small>
+    </div>
+  </footer>
+
+  <script src="./js/nav-active.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

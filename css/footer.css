@@ -1,0 +1,12 @@
+.site-footer{
+  border-top: 1px solid var(--steel-500);
+  background: linear-gradient(0deg, rgba(20,28,36,.85), rgba(20,28,36,.65));
+  margin-top: 28px;
+}
+.footer-inner{
+  display: flex; flex-wrap: wrap; gap: 10px;
+  align-items: center; justify-content: space-between;
+  padding: 16px 0 20px;
+}
+.site-footer a{ color: var(--gold); text-decoration: none; }
+.site-footer a:hover{ text-decoration: underline; }
