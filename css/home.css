@@ -1,88 +1,188 @@
-/* ===== Hero con imagen tipo póster ===== */
-.hero {
-  position: relative;
-  min-height: 46vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-bottom: 1px solid var(--steel-500);
+/* ===== Reset mínimo ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../assets/poster-throne.jpg") center/cover no-repeat;
-  filter: grayscale(.1) contrast(1.02) brightness(.8);
-  transform: scale(1.03);
+html,
+body {
+  height: 100%;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 35%, rgba(11, 15, 20, 0) 0%, rgba(11, 15, 20, .55) 45%, rgba(11, 15, 20, .92) 100%),
-    linear-gradient(180deg, rgba(11, 15, 20, .6), rgba(11, 15, 20, .95));
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  z-index: 1;
-  padding: 40px 0;
-}
-
-.hero-title {
-  margin: 0 0 6px;
-  font-size: 42px;
-  line-height: 1.1;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Helvetica, Arial;
   color: var(--text);
-  font-family: "Cinzel", serif;
-  font-weight: 900;
-  letter-spacing: .6px;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, .55);
+  background: var(--bg);
+  line-height: 1.5;
 }
 
-.hero-sub {
-  margin: 0 0 18px;
+/* ===== Paleta (inspirada en Game of Thrones) ===== */
+:root {
+  --bg: #0b0f14;
+  --panel: #10161d;
+  --card: #141c24;
+  --steel-700: #2e3a46;
+  --steel-600: #3a4652;
+  --steel-500: #44525f;
+  --text: #e6edf3;
+  --muted: #b7c3cf;
+  --gold: #c6a15b;
+  --blood: #7a2f2f;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow: 0 14px 35px rgba(0, 0, 0, .4);
+}
+
+/* ===== Contenedor ===== */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== Utilidades ===== */
+.accent {
+  color: var(--gold);
+}
+
+.muted {
   color: var(--muted);
-  font-size: 15px;
 }
 
-.cta-primary {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 999px;
-  color: var(--bg);
-  background: var(--gold);
-  border: 1px solid rgba(198, 161, 91, .85);
+:focus-visible {
+  outline: 3px solid rgba(198, 161, 91, .35);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ===========================
+   HEADER / NAVBAR
+   =========================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(11, 15, 20, .96), rgba(11, 15, 20, .88));
+  border-bottom: 1px solid var(--steel-500);
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .45));
+}
+
+.main-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
   text-decoration: none;
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: .15s ease;
+}
+
+.nav-link:hover {
+  color: var(--gold);
+  border-color: rgba(198, 161, 91, .35);
+  background: rgba(198, 161, 91, .08);
+}
+
+.nav-link.is-active {
+  color: var(--gold);
+  border-color: rgba(198, 161, 91, .55);
+  background: rgba(198, 161, 91, .12);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+  background: linear-gradient(180deg, rgba(11, 15, 20, .95), rgba(11, 15, 20, .80));
+  padding: 28px 0;
+  border-top: 1px solid var(--steel-500);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-title {
   font-weight: 700;
-  letter-spacing: .2px;
-  box-shadow: 0 8px 22px rgba(198, 161, 91, .25);
-  transition: transform .12s ease, box-shadow .15s ease, filter .15s ease;
+  color: var(--gold);
+  margin-bottom: 6px;
 }
 
-.cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(198, 161, 91, .32);
-  filter: saturate(1.05);
+.footer-text {
+  font-size: 14px;
+  color: var(--muted);
 }
 
-/* ===== Sección de equipo (tu mock) ===== */
+.footer-inner a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   MAIN - Fondo blanco
+   =========================== */
+.site-main {
+  background: #ffffff;
+  color: #111111;
+  padding: 30px 0 40px;
+}
+
+/* ===========================
+   EQUIPO (Tarjetas)
+   =========================== */
 .section {
   padding: 28px 0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 22px;
-  letter-spacing: .4px;
-  margin: 8px 0 22px;
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0 0 24px;
+  color: #000;
 }
 
+/* === GRID -> 3 columnas === */
+
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  /* <- centra las filas incompletas (1 o 2 items) */
 }
 
 .member-card {
@@ -90,13 +190,28 @@
   border: 1px solid var(--steel-500);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: transform .12s ease, box-shadow .16s ease, border-color .2s ease;
+  transition: .2s ease;
+
+  /* Nuevo: bases responsivas para 3/2/1 por fila */
+  flex: 1 1 calc(33.333% - 20px);
+  /* 3 por fila (con gap compensado) */
+  max-width: 360px;
+  /* evita que se estiren demasiado */
+}
+
+/* === Tarjetas === */
+.member-card {
+  background: var(--card);
+  border: 1px solid var(--steel-500);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: .2s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+  transform: translateY(-4px);
   border-color: var(--gold);
+  box-shadow: var(--shadow);
 }
 
 .member-media {
@@ -109,35 +224,33 @@
 .member-photo {
   width: 140px;
   height: 170px;
-  object-fit: cover;
   border-radius: var(--radius-md);
   border: 1px solid var(--steel-500);
-  background: var(--panel);
+  object-fit: cover;
 }
 
-.member-body{
-  position: relative;
-  padding: 12px 16px 56px;          /* deja espacio libre abajo a la derecha */
+.member-body {
+  padding: 12px 16px 16px;
 }
 
 .member-name {
-  margin: 8px 0 10px;
+  text-align: center;
   font-size: 16px;
   font-weight: 800;
-  text-align: center;
-  color: #c6a15b;
+  margin-bottom: 12px;
+  color: var(--gold);
 }
 
+/* === Información === */
 .member-data {
   margin: 0;
   display: grid;
-  row-gap: 8px;
+  gap: 10px;
 }
 
 .data-row {
   display: grid;
   grid-template-columns: 110px 1fr;
-  column-gap: 10px;
   align-items: baseline;
 }
 
@@ -151,91 +264,62 @@
   color: var(--text);
 }
 
-.page-note {
-  text-align: center;
-  margin-top: 20px;
-  color: #ff7676;
-  font-weight: 800;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 980px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    min-height: 44vh;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.paralelo-row{
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  display: grid;
-  grid-auto-flow: column;
-  gap: 8px;
-  background: rgba(17, 24, 39, .6); /* leve fondo para legibilidad */
-  padding: 6px 10px;
-  border: 1px solid var(--steel-500);
-  border-radius: 999px;
-}
-
-paralelo-row dt{
-  color: var(--muted);
-  font-weight: 900;
-  margin: 0;
-}
-
-.paralelo-row dd{
-  margin: 0;
-  color: var(--text);
-  font-weight: 700;
-}
-
-/* Ajuste de la fila de correo para incluir paralelo al lado derecho */
+/* === Correo + Paralelo horizontal === */
 .correo-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-/* Mantiene el estilo del correo */
 .correo-row dd {
   flex: 1;
-  color: var(--text);
   word-break: break-all;
 }
 
-/* Etiqueta "C1" estilo badge */
 .paralelo-badge {
-  background: rgba(17, 24, 39, 0.6);
+  background: rgba(17, 24, 39, .6);
   border: 1px solid var(--steel-500);
   border-radius: 999px;
   color: var(--text);
-  font-weight: 600;
-  font-size: 13px;
   padding: 3px 10px;
+  font-size: 13px;
+  font-weight: 600;
   white-space: nowrap;
-  margin-left: auto;
-  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover visual */
 .member-card:hover .paralelo-badge {
-  background: rgba(198, 161, 91, 0.15);
+  background: rgba(198, 161, 91, .20);
   border-color: var(--gold);
-  transform: scale(1.05);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 980px) {
+  .member-card {
+    flex: 1 1 calc(50% - 20px);
+    /* 2 por fila */
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 640px) {
+  .member-card {
+    flex: 1 1 100%;
+    /* 1 por fila */
+    max-width: 100%;
+  }
+}
+
+/* ===========================
+   HERO (opcional si no usas aquí)
+   =========================== */
+.hero {
+  min-height: 45vh;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
 }
