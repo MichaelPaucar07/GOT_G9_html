@@ -1,4 +1,3 @@
-// ../js/personajes.js
 const API = "https://thronesapi.com/api/v2";
 
 const $ = (s, c = document) => c.querySelector(s);
