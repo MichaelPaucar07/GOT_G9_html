@@ -1,12 +1,108 @@
-.site-footer{
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
+}
+
+/* ===== Footer con estilo tipo navbar ===== */
+.site-footer {
+  background: linear-gradient(0deg, rgba(11, 15, 20, .96), rgba(11, 15, 20, .88));
   border-top: 1px solid var(--steel-500);
-  background: linear-gradient(0deg, rgba(20,28,36,.85), rgba(20,28,36,.65));
-  margin-top: 28px;
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  font-family: "Cinzel", serif;
+  padding-top: 20px;
 }
-.footer-inner{
-  display: flex; flex-wrap: wrap; gap: 10px;
-  align-items: center; justify-content: space-between;
-  padding: 16px 0 20px;
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  padding: 20px 0;
 }
-.site-footer a{ color: var(--gold); text-decoration: none; }
-.site-footer a:hover{ text-decoration: underline; }
+
+.footer-col {
+  min-width: 0;
+}
+
+.footer-title {
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+
+.footer-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer-list a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.footer-list a:hover {
+  color: #f0d28f;
+  border-color: rgba(198, 161, 91, .45);
+}
+
+/* ===== Mapa ===== */
+.footer-map iframe {
+  width: 100%;
+  height: 220px;
+  border-radius: 10px;
+  filter: grayscale(.2) brightness(.9);
+  transition: transform .25s ease;
+}
+
+.footer-map iframe:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Sección legal inferior ===== */
+.footer-legal {
+  text-align: center;
+  padding: 12px 0 16px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  color: var(--muted);
+  font-size: 25px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-map iframe {
+    height: 200px;
+  }
+}
