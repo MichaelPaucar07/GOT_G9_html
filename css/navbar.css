@@ -1,102 +1,95 @@
+/* NAVBAR - SOLO HEADER */
+
+/* Barra fija superior */
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: linear-gradient(180deg, rgba(11, 15, 20, 0.96), rgba(11, 15, 20, 0.88));
-    border-bottom: 1px solid var(--steel-500);
-    backdrop-filter: blur(6px);
-    padding: 14px 0;
-    /* espacio superior e inferior */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(11, 15, 20, 0.96), rgba(11, 15, 20, 0.88));
+  border-bottom: 1px solid var(--steel-500);
+  backdrop-filter: blur(6px);
+  padding: 14px 0;
 }
 
-/* Ahora el contenido en columna centrada */
+/* Contenido centrado en columna */
 .header-inner {
-    display: flex;
-    flex-direction: column;
-    /* cambia de fila a columna */
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-/* Logo centrado */
+/* Logo contenedor */
 .brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--text);
-    font-family: "Cinzel", serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
+/* ✅ Tamaño del LOGO (UNA SOLA REGLA) */
 .brand-mark {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
-}
-
-/* Navegación centrada debajo del logo */
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Enlaces (mismo estilo original) */
-.nav-link {
-    position: relative;
-    text-decoration: none;
-    color: var(--text);
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    transition: transform 0.12s ease, border-color 0.15s ease,
-        background-color 0.15s ease, color 0.15s ease;
-}
-
-.nav-link:hover {
-    transform: translateY(-1px);
-    color: var(--gold);
-    border-color: rgba(198, 161, 91, 0.3);
-    background: linear-gradient(180deg,
-            rgba(198, 161, 91, 0.08),
-            rgba(255, 255, 255, 0));
-}
-
-.nav-link.is-active {
-    color: var(--gold);
-    border-color: rgba(198, 161, 91, 0.55);
-    background: linear-gradient(180deg,
-            rgba(198, 161, 91, 0.15),
-            rgba(198, 161, 91, 0.06));
-}
-
-/* Tamaño del logo en el encabezado */
-.brand-mark {
-  width: 150px;      /* ajusta el ancho */
-  height: auto;      /* mantiene proporción */
-  max-height: 100px; /* límite superior de altura */
-  object-fit: contain; /* mantiene la imagen completa sin recortes */
+  width: 150px !important;
+  /* Ajusta aquí el tamaño deseado */
+  height: auto !important;
+  max-height: 150px !important;
+  object-fit: contain;
   display: block;
-  margin: 0 auto;    /* centra horizontalmente dentro de su contenedor */
+  margin: 0 auto 15px;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
-  transition: transform 0.2s ease, filter 0.2s ease;
-  margin-bottom: 20px;
 }
 
-/* Efecto hover sutil */
+
+/* Hover sutil al logo */
 .brand-mark:hover {
   transform: scale(1.05);
   filter: drop-shadow(0 4px 10px rgba(198, 161, 91, 0.4));
 }
 
-/* Responsivo (pantallas pequeñas) */
+/* Navegación centrada */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, border-color 0.15s ease,
+    background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  color: var(--gold);
+  border-color: rgba(198, 161, 91, 0.3);
+  background: linear-gradient(180deg,
+      rgba(198, 161, 91, 0.08),
+      rgba(255, 255, 255, 0));
+}
+
+.nav-link.is-active {
+  color: var(--gold);
+  border-color: rgba(198, 161, 91, 0.55);
+  background: linear-gradient(180deg,
+      rgba(198, 161, 91, 0.15),
+      rgba(198, 161, 91, 0.06));
+}
+
+/* ✅ Responsivo */
 @media (max-width: 640px) {
   .brand-mark {
-    width: 70px;
-    max-height: 70px;
+    width: 120px;
+    max-height: 120px;
   }
 }
