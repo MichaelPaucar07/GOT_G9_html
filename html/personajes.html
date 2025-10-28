@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Juego de Tronos — Página Principal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/personajes.css">
+    <script src="../js/personajes.js" defer></script>
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./index.html" aria-label="Inicio">
+                <img class="brand-mark" src="../imgs/icon.png" alt="" />
+            </a>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a class="nav-link " href="./index.html">Principal</a>
+                <a class="nav-link is-active" href="./personajes.html">Personajes</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ================= CONTENIDO ================= -->
+    <main class="site-main">
+        <section class="container section">
+            <h2 class="section-title">PERSONAJES DE LA SERIE</h2>
+            <div class="chars-toolbar">
+                <input id="search" class="chars-search" type="search" placeholder="Buscar por nombre o familia…" />
+                <span id="status" class="chars-status" aria-live="polite"></span>
+            </div>
+            <ul id="list" class="characters-grid" aria-live="polite"></ul>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <!-- Columna 1: Datos institucionales -->
+            <section class="footer-col">
+                <h4 class="footer-title">UNEMI — Universidad Estatal de Milagro</h4>
+                <ul class="footer-list">
+                    <strong>Dirección:</strong> Cdla. Universitaria “Dr. Rómulo Minchala Murillo”, Km 1.5 vía Milagro –
+                    Virgen
+                    de Fátima, Milagro, Guayas, Ecuador</li>
+                    <strong>Teléfonos:</strong> (04) 271 5081 / 271 5079</li>
+                    <strong>Correo:</strong> <a href="mailto:rectorado@unemi.edu.ec">rectorado@unemi.edu.ec</a></li>
+
+                </ul>
+            </section>
+            <!-- Columna 2: Enlaces útiles -->
+            <section class="footer-col">
+                <h4 class="footer-title">Enlaces de Interés</h4>
+                <ul class="footer-list">
+                    <a href="https://www.unemi.edu.ec/" target="_blank" rel="noreferrer">Sitio Oficial UNEMI</a></li>
+                    <a href="https://www.unemi.edu.ec/index.php/carreras-presencial/" target="_blank"
+                        rel="noreferrer">Facultades
+                        y Carreras</a>
+                    </li>
+                    <a href="https://investigacion.unemi.edu.ec/" target="_blank" rel="noreferrer">Investigación</a>
+                    </li>
+                    <a href="https://thronesapi.com/" target="_blank" rel="noreferrer">API Thrones</a></li>
+                </ul>
+            </section>
+            <!-- Columna 3: Mapa -->
+            <section class="footer-col footer-map">
+                <h4 class="footer-title">Ubicación</h4>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.0116737716494!2d-79.60552002316518!3d-2.1492176371820166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d465523c50e37%3A0x70a5136e6272715f!2sUNEMI%20-%20Universidad%20Estatal%20de%20Milagro!5e0!3m2!1ses-419!2sec!4v1761609562668!5m2!1ses-419!2sec"
+                    width="100%" height="220" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </section>
+        </div>
+        <div class="container footer-legal">
+            <small>© <span id="year"></span> Proyecto Consumo API - Game of Thrones.</small>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

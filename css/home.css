@@ -18,7 +18,6 @@ body {
   line-height: 1.5;
 }
 
-/* ===== Paleta (inspirada en Game of Thrones) ===== */
 :root {
   --bg: #0b0f14;
   --panel: #10161d;
@@ -115,9 +114,7 @@ body {
   background: rgba(198, 161, 91, .12);
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
+
 .site-footer {
   background: linear-gradient(180deg, rgba(11, 15, 20, .95), rgba(11, 15, 20, .80));
   padding: 28px 0;
@@ -151,18 +148,14 @@ body {
   text-decoration: underline;
 }
 
-/* ===========================
-   MAIN - Fondo blanco
-   =========================== */
+
 .site-main {
   background: #ffffff;
   color: #111111;
   padding: 30px 0 40px;
 }
 
-/* ===========================
-   EQUIPO (Tarjetas)
-   =========================== */
+/* ===========================EQUIPO=========================== */
 .section {
   padding: 28px 0;
 }
@@ -175,14 +168,11 @@ body {
   color: #000;
 }
 
-/* === GRID -> 3 columnas === */
-
 .team-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  /* <- centra las filas incompletas (1 o 2 items) */
 }
 
 .member-card {
@@ -191,12 +181,8 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: .2s ease;
-
-  /* Nuevo: bases responsivas para 3/2/1 por fila */
   flex: 1 1 calc(33.333% - 20px);
-  /* 3 por fila (con gap compensado) */
   max-width: 360px;
-  /* evita que se estiren demasiado */
 }
 
 /* === Tarjetas === */
@@ -293,9 +279,6 @@ body {
   border-color: var(--gold);
 }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
 @media (max-width: 980px) {
   .member-card {
     flex: 1 1 calc(50% - 20px);
@@ -307,14 +290,10 @@ body {
 @media (max-width: 640px) {
   .member-card {
     flex: 1 1 100%;
-    /* 1 por fila */
     max-width: 100%;
   }
 }
 
-/* ===========================
-   HERO (opcional si no usas aquí)
-   =========================== */
 .hero {
   min-height: 45vh;
   display: grid;
