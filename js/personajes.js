@@ -2,15 +2,15 @@
 const API = "https://thronesapi.com/api/v2";
 
 const $ = (s, c = document) => c.querySelector(s);
-const list    = $("#list");
-const detail  = $("#detail");
-const search  = $("#search");
-const statusEl= $("#status");
+const list = $("#list");
+const detail = $("#detail");
+const search = $("#search");
+const statusEl = $("#status");
 
 let data = [];
 let filtered = [];
 
-const setStatus = (msg="") => statusEl && (statusEl.textContent = msg);
+const setStatus = (msg = "") => statusEl && (statusEl.textContent = msg);
 
 window.addEventListener("DOMContentLoaded", () => {
   bindSearch();

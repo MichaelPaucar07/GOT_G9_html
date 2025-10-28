@@ -16,7 +16,6 @@ main {
   flex-shrink: 0;
 }
 
-/* ===== Footer con estilo tipo navbar ===== */
 .site-footer {
   background: linear-gradient(0deg, rgba(11, 15, 20, .96), rgba(11, 15, 20, .88));
   border-top: 1px solid var(--steel-500);
@@ -67,7 +66,6 @@ main {
   border-color: rgba(198, 161, 91, .45);
 }
 
-/* ===== Mapa ===== */
 .footer-map iframe {
   width: 90%;
   height: 220px;
@@ -80,7 +78,6 @@ main {
   transform: scale(1.02);
 }
 
-/* ===== Sección legal inferior ===== */
 .footer-legal {
   text-align: center;
   padding: 12px 0 16px;
@@ -89,7 +86,6 @@ main {
   font-size: 19px;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 900px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;

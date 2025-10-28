@@ -1,4 +1,3 @@
-/* ===== Reset mínimo ===== */
 *,
 *::before,
 *::after {
@@ -35,14 +34,12 @@ body {
   --shadow: 0 14px 35px rgba(0, 0, 0, .4);
 }
 
-/* ===== Contenedor ===== */
 .container {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* ===== Utilidades ===== */
 .accent {
   color: var(--gold);
 }
@@ -57,9 +54,6 @@ body {
   border-radius: 8px;
 }
 
-/* ===========================
-   HEADER / NAVBAR
-   =========================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -155,7 +149,6 @@ body {
   padding: 30px 0 40px;
 }
 
-/* ===========================EQUIPO=========================== */
 .section {
   padding: 28px 0;
 }
@@ -185,7 +178,6 @@ body {
   max-width: 360px;
 }
 
-/* === Tarjetas === */
 .member-card {
   background: var(--card);
   border: 1px solid var(--steel-500);
@@ -227,7 +219,6 @@ body {
   color: var(--gold);
 }
 
-/* === Información === */
 .member-data {
   margin: 0;
   display: grid;
@@ -250,7 +241,6 @@ body {
   color: var(--text);
 }
 
-/* === Correo + Paralelo horizontal === */
 .correo-row {
   display: flex;
   justify-content: space-between;
